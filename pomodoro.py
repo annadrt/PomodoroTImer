@@ -13,11 +13,25 @@ def rodar_pausa(pausa, nomeSessoes):
         time.sleep(1)
         print(f"Pausa: {k}")
 
+def pedir_numero(mensagem):
 
-duracao = int(input("Tempo da sessão: "))
-pausa = int(input("Tempo da pausa: "))
-sessao = int(input("Sessões: "))
-nomeSessoes = []
+    while True:
+        try:
+
+            valor = int(input(mensagem))
+            break
+        except ValueError:
+            print ("Digite um número.")
+
+    return valor
+
+
+if __name__ == "__main__":
+
+    duracao = pedir_numero("Tempo da sessão: ")
+    pausa =  pedir_numero("Tempo da pausa: ")
+    sessao = pedir_numero("Sessões: ")
+    nomeSessoes = []
 
 for i in range(sessao):
     nome = input(f"Nome da sessão {i+1}: ")
